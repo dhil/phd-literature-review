@@ -38,10 +38,15 @@
 \newcommand{\reachme}[1]{\href{mailto:#1@ed.ac.uk}{\MakeLowercase{#1@ed.ac.uk}}}
 
 %% Metainformation
-\title{The Three Challenges of Effect Handlers}
-\author[D. Hillerström]{Daniel Hillerström}
+\title{On the Challenges of Programming with Effect Handlers:
+  Naming, Efficiency, and Scoping}
+
+\author[D. Hillerström]{Daniel Hillerström} 
+%
 \address{LFCS, University of Edinburgh, Scotland}
-\email{\reachme{daniel.hillerstrom}}
+%
+\email{\reachme{daniel.hillerstrom}} 
+%
 \date{\today}
 
 \keywords{algebraic effects, effect handlers, delimited control, abstract machine}
@@ -172,6 +177,15 @@ effect handlers in mind:
   % intermediate representation which gives a completely flat
   % continuation structure.
 \end{itemize}
+
+%% Main sections
+\section{Effect names}
+\subsection{Scaling by naming}
+\subsection{Dynamic effect generation}
+
+\section{Efficient Effect Handlers}
+
+\section{Scoped Effect Handlers}
 
 %% Bibliography
 \nocite{*}
