@@ -1,28 +1,29 @@
-\documentclass[a4paper,twoside,10pt]{amsart}
+\documentclass[adraft]{eptcs}
+%\documentclass[a4paper,twoside,10pt]{eptcs}
 
-%% Dotted TOC
-\makeatletter
-\def\@tocline#1#2#3#4#5#6#7{\relax
-  \ifnum #1>\c@tocdepth % then omit
-  \else
-    \par \addpenalty\@secpenalty\addvspace{#2}%
-    \begingroup \hyphenpenalty\@M
-    \@ifempty{#4}{%
-      \@tempdima\csname r@tocindent\number#1\endcsname\relax
-    }{%
-      \@tempdima#4\relax
-    }%
-    \parindent\z@ \leftskip#3\relax \advance\leftskip\@tempdima\relax
-    \rightskip\@pnumwidth plus4em \parfillskip-\@pnumwidth
-    #5\leavevmode\hskip-\@tempdima
-      \ifcase #1
-       \or\or \hskip 1em \or \hskip 2em \else \hskip 3em \fi%
-      #6\nobreak\relax
-    \dotfill\hbox to\@pnumwidth{\@tocpagenum{#7}}\par
-    \nobreak
-    \endgroup
-  \fi}
-\makeatother
+% %% Dotted TOC
+% \makeatletter
+% \def\@tocline#1#2#3#4#5#6#7{\relax
+%   \ifnum #1>\c@tocdepth % then omit
+%   \else
+%     \par \addpenalty\@secpenalty\addvspace{#2}%
+%     \begingroup \hyphenpenalty\@M
+%     \@ifempty{#4}{%
+%       \@tempdima\csname r@tocindent\number#1\endcsname\relax
+%     }{%
+%       \@tempdima#4\relax
+%     }%
+%     \parindent\z@ \leftskip#3\relax \advance\leftskip\@tempdima\relax
+%     \rightskip\@pnumwidth plus4em \parfillskip-\@pnumwidth
+%     #5\leavevmode\hskip-\@tempdima
+%       \ifcase #1
+%        \or\or \hskip 1em \or \hskip 2em \else \hskip 3em \fi%
+%       #6\nobreak\relax
+%     \dotfill\hbox to\@pnumwidth{\@tocpagenum{#7}}\par
+%     \nobreak
+%     \endgroup
+%   \fi}
+% \makeatother
 
 %% Packages
 \usepackage[utf8]{inputenc}  % Use UTF-8 encoding
@@ -38,18 +39,25 @@
 \newcommand{\reachme}[1]{\href{mailto:#1@ed.ac.uk}{\MakeLowercase{#1@ed.ac.uk}}}
 
 %% Metainformation
-\title{On the Challenges of Programming with Effect Handlers:
-  Naming, Efficiency, and Scoping}
 
-\author[D. Hillerström]{Daniel Hillerström} 
-%
-\address{LFCS, University of Edinburgh, Scotland}
-%
-\email{\reachme{daniel.hillerstrom}} 
-%
-\date{\today}
+\newcommand{\thetitle}{On the State of Effectful Programming}
 
-\keywords{algebraic effects, effect handlers, delimited control, abstract machine}
+\title{\thetitle}
+
+\author{Daniel Hillerström \institute{LFCS, University of Edinburgh, UK} \email{\reachme{daniel.hillerstrom}}}
+
+\def\authorrunning{D. Hillerström}
+\def\titlerunning{\thetitle}
+
+% \author[D. Hillerström]{Daniel Hillerström} 
+% %
+% \address{LFCS, University of Edinburgh, Scotland}
+% %
+% \email{\reachme{daniel.hillerstrom}} 
+% %
+% \date{\today}
+
+% \keywords{algebraic effects, effect handlers, delimited control, abstract machine}
 
 %% Begin document
 \begin{document}
@@ -69,7 +77,7 @@ An abstract will appear here\dots
 \end{abstract}
 
 %% Table of contents
-\tableofcontents
+%\tableofcontents
 
 %% Introduction
 \section{Introduction}
