@@ -62,7 +62,7 @@
   howpublished = {{ML Workshop}, Nara, Japan}
 }
 
-# Core references on handlers
+# Core references on algebraic effects and handlers
 @article{PlotkinP13,
   author    = {Gordon D. Plotkin and
                Matija Pretnar},
@@ -113,6 +113,13 @@
   timestamp = {Mon, 27 Jun 2011 17:48:06 +0200},
   biburl    = {http://dblp.uni-trier.de/rec/bib/conf/fossacs/PlotkinP01},
   bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@phdthesis{Pretnar10,
+  author    = {Matija Pretnar},
+  title     = {Logic and handling of algebraic effects},
+  school    = {University of Edinburgh, {UK}},
+  year      = {2010}
 }
 
 # Other algebraic effects and handlers
@@ -169,6 +176,16 @@
   year      = {2016}
 }
 
+@inproceedings{KammarP12,
+  author    = {Ohad Kammar and
+               Gordon D. Plotkin},
+  title     = {Algebraic foundations for effect-dependent optimisations},
+  booktitle = {{POPL}},
+  pages     = {349--360},
+  publisher = {{ACM}},
+  year      = {2012}
+}
+
 # Eff
 @article{BauerP15,
   author    = {Andrej Bauer and
@@ -184,6 +201,24 @@
   timestamp = {Wed, 07 Jan 2015 15:54:11 +0100},
   biburl    = {http://dblp.uni-trier.de/rec/bib/journals/jlp/BauerP15},
   bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@article{BauerP13,
+  author    = {Andrej Bauer and
+               Matija Pretnar},
+  title     = {An Effect System for Algebraic Effects and Handlers},
+  journal   = {Logical Methods in Computer Science},
+  volume    = {10},
+  number    = {4},
+  year      = {2014}
+}
+
+
+@inproceedings{KiselyovS16,
+  author    = {Oleg Kiselyov and {KC} Sivaramakrishnan},
+  title     = {{Eff} Directly in {OCaml}},
+  howpublished = {{ML Workshop}},
+  year      = {2016},
 }
 
 # Idris
@@ -228,8 +263,8 @@
   location = {Nara, Japan},
   pages = {15--27},
   numpages = {13},
-  url = {http://doi.acm.org/10.1145/2976022.2976033},
-  doi = {10.1145/2976022.2976033},
+  OPTurl = {http://doi.acm.org/10.1145/2976022.2976033},
+  OPTdoi = {10.1145/2976022.2976033},
   acmid = {2976033},
   publisher = {ACM},
   address = {New York, NY, USA},
@@ -271,7 +306,7 @@
   author = {Daan Leijen},
   title  = {Algebraic effects for {Functional} {Programming}},
   year   = 2016,
-  month  = 12,
+  month  = dec,
   institution = {Microsoft Research},
   number = {MSR-TR-2016-29},
   note = {Extended version of "Type directed compilation of row-typed algebraic effects"},
@@ -321,6 +356,16 @@
   timestamp = {Tue, 08 Sep 2015 17:07:32 +0200},
   biburl    = {http://dblp.uni-trier.de/rec/bib/conf/haskell/KiselyovI15},
   bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{Kiselyov16,
+  author    = {Oleg Kiselyov},
+  title     = {Parameterized extensible effects and session types (extended abstract)},
+  booktitle = {TyDe'16},
+  pages     = {41--42},
+  publisher = {{ACM}},
+  year      = {2016},
+  month     = sep
 }
 
 @inproceedings{KammarLO13,
@@ -399,10 +444,12 @@
 @article{SalehS16,
   author    = {Amr Hany Saleh and
                Tom Schrijvers},
-  title     = {Efficient Algebraic Effect Handlers for {Prolog}},
+  title     = {Efficient algebraic effect handlers for {Prolog}},
   journal   = {{TPLP}},
-  year      = {2016},
-  note = {Proceedings of {ICLP}}
+  volume    = {16},
+  number    = {5-6},
+  pages     = {884--898},
+  year      = {2016}
 }
 
 # References on Links
@@ -520,7 +567,50 @@
   year      = {2008}
 }
 
+@inproceedings{LiangHJ95,
+  author    = {Sheng Liang and
+               Paul Hudak and
+               Mark P. Jones},
+  title     = {Monad Transformers and Modular Interpreters},
+  booktitle = {{POPL}},
+  pages     = {333--343},
+  publisher = {{ACM} Press},
+  year      = {1995}
+}
+
+@techreport{SchrijversPWJ,
+  author = {Tom Schrijvers and
+            Maciej Piróg and
+            Nicolas Wu and
+            Mauro Jaskelioff},
+  title  = {{Monad} {Transformers} and Modular Algebraic Effects: What Binds Them Together},
+  number = {CW 699},
+  year   = 2016,
+  month  = sep,
+  institution = {Department of Computer Science, KU Leuven},
+  url    = {https://lirias.kuleuven.be/bitstream/123456789/551419/1/CW699.pdf}
+}
+
+@inproceedings{SwamyGLH11,
+  author    = {Nikhil Swamy and
+               Nataliya Guts and
+               Daan Leijen and
+               Michael Hicks},
+  title     = {Lightweight monadic programming in {ML}},
+  booktitle = {{ICFP}},
+  pages     = {15--27},
+  publisher = {{ACM}},
+  year      = {2011}
+}
+
 # Type and effect systems
+@phdthesis{Kammar14,
+  author    = {Ohad Kammar},
+  title     = {Algebraic theory of type-and-effect systems},
+  school    = {University of Edinburgh, {UK}},
+  year      = {2014}
+}
+
 @inproceedings{NielsonN99,
   author    = {Flemming Nielson and
                Hanne Riis Nielson},
@@ -531,6 +621,18 @@
   pages     = {114--136},
   publisher = {Springer},
   year      = {1999}
+}
+
+@misc{GoslingJSBB96,
+  author    = {James Gosling and
+               William N. Joy and
+               Guy L. {Steele Jr.} and
+               Gilad Bracha and
+               Alex Buckley},
+  title     = {The {Java} Language Specification},
+  year      = {2016},
+  month     = 2,
+  url       = {https://docs.oracle.com/javase/specs/jls/se8/jls8.pdf}
 }
 
 # A-normal form
@@ -653,7 +755,7 @@
 # 1ML
 @inproceedings{Rossberg15,
   author    = {Andreas Rossberg},
-  title     = {1ML - core and modules united (F-ing first-class modules)},
+  title     = {{1ML} - core and modules united ({F}-ing first-class modules)},
   booktitle = {{ICFP}},
   pages     = {35--47},
   publisher = {{ACM}},
@@ -662,11 +764,35 @@
 
 @inproceedings{Rossberg16,
   author    = {Andreas Rossberg},
-  title     = {1ML with Special Effects - F-ing Generativity Polymorphism},
+  title     = {{1ML} with Special Effects - {F}-ing Generativity Polymorphism},
   booktitle = {A List of Successes That Can Change the World},
   series    = {Lecture Notes in Computer Science},
   volume    = {9600},
   pages     = {336--355},
   publisher = {Springer},
   year      = {2016}
+}
+
+# Row types
+@incollection{Remy94,
+ author = {R{\'e}my, Didier},
+ chapter = {Type Inference for Records in Natural Extension of {ML}},
+ title = {Theoretical Aspects of Object-oriented Programming},
+ editor = {Gunter, Carl A. and Mitchell, John C.},
+ year = {1994},
+ isbn = {0-262-07155-X},
+ pages = {67--95},
+ numpages = {29},
+ OPTurl = {http://dl.acm.org/citation.cfm?id=186677.186689},
+ acmid = {186689},
+ publisher = {MIT Press},
+ address = {Cambridge, MA, USA},
+}
+
+# CBPV
+@phdthesis{Levy01,
+  author    = {Paul Blain Levy},
+  title     = {Call-by-push-value},
+  school    = {Queen Mary University of London, {UK}},
+  year      = {2001}
 }
