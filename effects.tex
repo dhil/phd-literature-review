@@ -1,18 +1,19 @@
-\documentclass[letterpaper,10pt]{article}
+\documentclass[preprint,9pt,numbers]{sigplanconf}
 
 %% Packages
-\usepackage[utf8]{inputenc}  % Use UTF-8 encoding
-\usepackage[english]{babel}  % Enforce English language settings
-\usepackage{hyperref}        % Interactive PDF
-\usepackage[T1]{fontenc}     % Fix font rendering
-\usepackage{times}           % Use times font
-\usepackage[numbers]{natbib} % Bibliography
-\usepackage{mathtools}       % Maths typesetting
-\usepackage{mathpartir}      % Inference rules
-\usepackage{mathwidth}       % Render character sequences nicely in math mode
-\usepackage{xspace}          % proper spacing for macros in text
-\usepackage{tikz}            % Drawing pictures
-\usepackage{beramono}        % Typewriter font
+\usepackage[utf8]{inputenc}   % Use UTF-8 encoding
+\usepackage[english]{babel}   % Enforce English language settings
+\usepackage{hyperref}         % Interactive PDF
+\usepackage[T1]{fontenc}      % Fix font rendering
+\usepackage{times}            % Use times font
+%\usepackage[numbers]{natbib}  % Bibliography
+\usepackage{mathtools}        % Maths typesetting
+\usepackage{mathpartir}       % Inference rules
+\usepackage{mathwidth}        % Render character sequences nicely in math mode
+\usepackage{xspace}           % proper spacing for macros in text
+\usepackage{tikz}             % Drawing pictures
+\usepackage[scaled]{beramono} % Typewriter font
+\usepackage{flushend}         % Balance columns
 
 %%
 %% Convenient macros
@@ -32,10 +33,28 @@
 \newcommand{\theemail}{\small{\reachme{daniel.hillerstrom}}}
 
 \title{\thetitle{}}
-\author{\theauthor{}\\\theaffiliation{}\\\theemail{}}
-\date{\small{\today}}
+% \author{\theauthor{}\\\theaffiliation{}\\\theemail{}}
+% \date{\small{\today}}
+
+\authorinfo{\theauthor{}}
+{\theaffiliation{}}
+{\theemail{}}
+
 %% Begin document
 \begin{document}
+
+%% Remove SIGPLANCONF copyright space
+\makeatletter
+\def\@copyrightspace{\relax}
+\makeatother
+
+\titlebanner{DRAFT--do not distribute}    % These are ignored unless
+\preprintfooter{} % 'preprint' option specified.
+
+% Paper geometry
+\special{papersize=8.5in,11in}
+\setlength{\pdfpageheight}{\paperheight}
+\setlength{\pdfpagewidth}{\paperwidth}
 
 %% Make title
 \maketitle
@@ -135,7 +154,7 @@ effect handlers in mind:
   effects in order to support effects such as ML-style higher-order
   state (which has an operation for generating new references).
 
-\item Frank~\cite{LindleyMM16} is a language with effect handlers but
+\item Frank~\cite{LindleyMM17} is a language with effect handlers but
   no separate notion of function: a function is but a special case of
   a handler. Frank has a bidirectional type and effect system with a
   novel form of effect polymorphism.
@@ -170,6 +189,6 @@ effect handlers in mind:
 %% Bibliography
 \nocite{*}
 \bibliographystyle{abbrvnat}
-\bibliography{\jobname}
+\raggedright\bibliography{\jobname}
 
 \end{document}
