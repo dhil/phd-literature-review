@@ -48,7 +48,7 @@
 \def\@copyrightspace{\relax}
 \makeatother
 
-\titlebanner{DRAFT--do not distribute}    % These are ignored unless
+\titlebanner{DRAFT--do not distribute\\Literature review}    % These are ignored unless
 \preprintfooter{} % 'preprint' option specified.
 
 % Paper geometry
@@ -61,7 +61,8 @@
 
 %% Abstract
 \begin{abstract}
-An abstract will appear here\dots
+  The very nature of programs is effectful: given an input; produce an
+  output.
 \end{abstract}
 
 %% Introduction
@@ -69,12 +70,52 @@ An abstract will appear here\dots
 Introduction\dots
 
 \subsection{Outline}
+This paper is split into two parts:
+\begin{itemize}
+\item The first part resolve around the \emph{tracking} of
+  effects. Section~\ref{sec:effpractice} outlines type and effect
+  systems in existing programming languages.
+\item The second dives into the \emph{handling} of computational
+  effects. Section~\ref{sec:monads-vs-handlers} presents \emph{monads}
+  and \emph{effect handlers} as bases for practical effectful
+  programming, while Sections~\ref{sec:generative}, and
+  \ref{sec:scoped}, and \ref{sec:impl} discuss the three major open
+  problems with effect handlers.
+\end{itemize}
+Finally Section~\ref{sec:conclusions} summarises the paper and outline
+potential directions for future work.
 
-\section{Effect systems in practice}
 
-\section{Algebraic effects and their handlers}
+%%
+%% PART 1: Type and effect systems
+%%
+\section{Type and effect systems in practice}
+\label{sec:effpractice}
 
-\section{Implementations}
+\todo{Java's checked exceptions}
+\todo{Haskell's monadic effect system}
+\todo{Eff, Links, and Koka's row-based effect systems}
+\todo{Mention in passing: 1ML tracking purity}
+
+%%
+%% PART 2: Programming with effects
+%%
+\section{Handling computational effects}
+\label{sec:monads-vs-handlers}
+
+\section{Generative effects}
+\label{sec:generative}
+
+\todo{Idris approach}
+\todo{Dynamic references in Multicore OCaml due to lack of effect typing}
+
+\section{Scoped effect handlers}
+\label{sec:scoped}
+
+\todo{``Effect Handlers in Scope'' approach}
+
+\section{Efficient effect handlers}
+\label{sec:impl}
 Since their inception, several implementations of algebraic effect
 handlers have appeared, many of which are implemented as libraries in
 existing programming languages.
@@ -177,18 +218,19 @@ effect handlers in mind:
   % continuation structure.
 \end{itemize}
 
-%% Main sections
-\section{Generative effects}
-
-\section{Efficient Effect Handlers}
-
-\section{Scoped Effect Handlers}
 
 \section{Conclusions and future work}
+\label{sec:conclusions}
+
+\section{Acknowledgements}
+This work was supported by \href{https://www.epsrc.ac.uk/}{EPSRC}
+grant EP/L01503X/1 (The University of Edinburgh
+\href{http://pervasiveparallelism.inf.ed.ac.uk}{CDT in Pervasive
+  Parallelism}).
 
 %% Bibliography
 \nocite{*}
 \bibliographystyle{abbrvnat}
-\raggedright\bibliography{\jobname}
+\softraggedright\bibliography{\jobname}
 
 \end{document}
