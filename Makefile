@@ -1,7 +1,7 @@
 TEXC=pdflatex
 CFLAGS=-interaction=nonstopmode -halt-on-error -file-line-error
 BIBC=bibtex
-PAPER=review
+PAPER=effects
 BIBLIO=$(PAPER)
 
 all: $(PAPER).pdf

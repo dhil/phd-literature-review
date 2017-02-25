@@ -1,29 +1,4 @@
-\documentclass[adraft]{eptcs}
-%\documentclass[a4paper,twoside,10pt]{eptcs}
-
-% %% Dotted TOC
-% \makeatletter
-% \def\@tocline#1#2#3#4#5#6#7{\relax
-%   \ifnum #1>\c@tocdepth % then omit
-%   \else
-%     \par \addpenalty\@secpenalty\addvspace{#2}%
-%     \begingroup \hyphenpenalty\@M
-%     \@ifempty{#4}{%
-%       \@tempdima\csname r@tocindent\number#1\endcsname\relax
-%     }{%
-%       \@tempdima#4\relax
-%     }%
-%     \parindent\z@ \leftskip#3\relax \advance\leftskip\@tempdima\relax
-%     \rightskip\@pnumwidth plus4em \parfillskip-\@pnumwidth
-%     #5\leavevmode\hskip-\@tempdima
-%       \ifcase #1
-%        \or\or \hskip 1em \or \hskip 2em \else \hskip 3em \fi%
-%       #6\nobreak\relax
-%     \dotfill\hbox to\@pnumwidth{\@tocpagenum{#7}}\par
-%     \nobreak
-%     \endgroup
-%   \fi}
-% \makeatother
+\documentclass[letterpaper,10pt]{article}
 
 %% Packages
 \usepackage[utf8]{inputenc}  % Use UTF-8 encoding
@@ -32,56 +7,53 @@
 \usepackage[T1]{fontenc}     % Fix font rendering
 \usepackage{times}           % Use times font
 \usepackage[numbers]{natbib} % Bibliography
-\usepackage{mathtools}       % Commonly used math packages
+\usepackage{mathtools}       % Maths typesetting
+\usepackage{mathpartir}      % Inference rules
+\usepackage{mathwidth}       % Render character sequences nicely in math mode
+\usepackage{xspace}          % proper spacing for macros in text
 \usepackage{tikz}            % Drawing pictures
+\usepackage{beramono}        % Typewriter font
+
+%%
+%% Convenient macros
+%%
+
+% TODOs
+\newcommand{\todo}[1]{{\par\noindent\small\color{red} \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\textbf{TODO:} #1}}}}
 
 %% E-mail obfuscation
 \newcommand{\reachme}[1]{\href{mailto:#1@ed.ac.uk}{\MakeLowercase{#1@ed.ac.uk}}}
 
 %% Metainformation
 
-\newcommand{\thetitle}{On the State of Effectful Programming}
+\newcommand{\thetitle}{The State of Effectful Programming}
+\newcommand{\theauthor}{Daniel Hillerström}
+\newcommand{\theaffiliation}{\small{LFCS, The University of Edinburgh}}
+\newcommand{\theemail}{\small{\reachme{daniel.hillerstrom}}}
 
-\title{\thetitle}
-
-\author{Daniel Hillerström \institute{LFCS, University of Edinburgh, UK} \email{\reachme{daniel.hillerstrom}}}
-
-\def\authorrunning{D. Hillerström}
-\def\titlerunning{\thetitle}
-
-% \author[D. Hillerström]{Daniel Hillerström} 
-% %
-% \address{LFCS, University of Edinburgh, Scotland}
-% %
-% \email{\reachme{daniel.hillerstrom}} 
-% %
-% \date{\today}
-
-% \keywords{algebraic effects, effect handlers, delimited control, abstract machine}
-
+\title{\thetitle{}}
+\author{\theauthor{}\\\theaffiliation{}\\\theemail{}}
+\date{\small{\today}}
 %% Begin document
 \begin{document}
 
 %% Make title
 \maketitle
 
-%% Logo
-% \begin{tikzpicture}[remember picture,overlay]
-%    \node[anchor=north,inner sep=0pt,yshift=-40pt] at (current page.north)
-%               {\includegraphics[scale=0.2]{eushield-normal.pdf}};
-% \end{tikzpicture}
-
 %% Abstract
 \begin{abstract}
 An abstract will appear here\dots
 \end{abstract}
 
-%% Table of contents
-%\tableofcontents
-
 %% Introduction
 \section{Introduction}
 Introduction\dots
+
+\subsection{Outline}
+
+\section{Effect systems in practice}
+
+\section{Algebraic effects and their handlers}
 
 \section{Implementations}
 Since their inception, several implementations of algebraic effect
@@ -132,7 +104,7 @@ handlers:
 
 \item Koka by \citet{Leijen14} is a functional web-oriented language
   which has recently been enriched with effect
-  handlers~\cite{Leijen16}. It has a type-and-effect system which is
+  handlers~\cite{Leijen17}. It has a type-and-effect system which is
   also based on row polymorphism. Koka uses a novel compilation scheme
   which takes advantage of effect information in order to derive an
   efficient implementation of handlers on managed platforms such as
@@ -187,17 +159,17 @@ effect handlers in mind:
 \end{itemize}
 
 %% Main sections
-\section{Effect names}
-\subsection{Scaling by naming}
-\subsection{Dynamic effect generation}
+\section{Generative effects}
 
 \section{Efficient Effect Handlers}
 
 \section{Scoped Effect Handlers}
 
+\section{Conclusions and future work}
+
 %% Bibliography
 \nocite{*}
 \bibliographystyle{abbrvnat}
-\bibliography{review.bib}
+\bibliography{\jobname}
 
 \end{document}
