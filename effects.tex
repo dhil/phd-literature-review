@@ -16,6 +16,22 @@
 \usepackage{flushend}         % Balance columns
 
 %%
+%% Listing styles
+%%
+\usepackage{listings}         % The lstlisting environment
+
+% Java style
+\lstdefinestyle{java}{
+  frame=none,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{black},
+  language={java},
+  keepspaces=true,
+  columns=flexible  
+}
+\newcommand{\java}[1]{\lstinline[style=java]{#1}}
+
+%%
 %% Convenient macros
 %%
 
@@ -73,7 +89,7 @@ Introduction\dots
 \subsection{Outline}
 This paper is split into two parts:
 \begin{itemize}
-\item The first part resolve around the \emph{tracking} of
+\item The first part revolve around the \emph{tracking} of
   effects. Section~\ref{sec:effpractice} outlines type and effect
   systems in existing programming languages.
 \item The second dives into the \emph{handling} of computational
@@ -93,8 +109,48 @@ potential directions for future work.
 \section{Type and effect systems in practice}
 \label{sec:effpractice}
 
-\subsection{Basic exception tracking}
-\todo{Java's checked exceptions}
+The fundamental purpose of a type system is to ensure the absence of
+(a fixed class of) runtime errors.
+
+
+\subsection{Checked exceptions}
+%\todo{Come up with a running (meaningful) example for these sections} 
+%
+The Java programming language~\cite{GoslingJSBB96} comprise an effect
+system through its \java{throws} declarations on methods. A
+\java{throws} declaration can be thought of as an effect annotation,
+e.g.
+%
+\begin{lstlisting}[style={java}]
+public interface Console {
+  char read() throws IOException;
+  void put(char c) throws IOException;
+}
+\end{lstlisting}
+The \java{Console} interface contains two abstract effectful
+operations \java{read} and \java{put} intended for reading from and
+writing a single character to a console, respectively. The interface
+conveys that the operations may potentially cause an
+\java{IOException} signifying that they may perform I/O.
+%
+It is the caller's responsibility to handle the exceptions
+appropriately.
+
+\paragraph{Effect polymorphism}
+%
+Java's effect system supports a limited form of effect polymorphism
+through subtyping. Because the notions of subclassing and subtyping
+coincide in Java any operation causing an \java{IOException} may also
+cause a \java{FileNotFoundException} or \java{SSLException} without
+violating the interface contract as these are subclasses of
+\java{IOException}.
+%
+\todo{Runtime, Error, exception hierachy}
+\todo{Expression problem with effects}
+%
+Its an old problem in new clothing: it is a variation of \emph{the
+  expression problem}~\cite{Wadler98}.
+%
 
 \subsection{Monadic effect typing}
 \todo{Haskell's monadic effect system}
@@ -105,6 +161,7 @@ potential directions for future work.
 
 \subsection{Miscellaneous}
 \todo{Mention in passing: 1ML tracking purity}
+\todo{Mention gradual effect typing}
 
 %%
 %% PART 2: Programming with effects
